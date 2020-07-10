@@ -23,7 +23,7 @@
         try {
             // SQL문을 만든다(모든 레코드)
             $sql = "SELECT * FROM member ";
-            $sql = $sql. "WHERE ID LIKE 'busan%' LIMIT 16, 10";
+            $sql = $sql. "WHERE id like 'busan100%'";
            
             echo ("sql = {$sql}");
 
