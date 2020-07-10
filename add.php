@@ -23,10 +23,12 @@
     <?php
         try {
 
-            for($i = 1; $i <= 10000; $i++) {
+            for($i = 10000; $i <= 100000; $i++) {
                 $sql = "INSERT INTO `member` (`id`, `pw`, `name`, `age`, `sex`, `hp`, `email`, `gendar`, `hobby1`, `hobby2`, `hobby3`, `hobby4`, `hobby5`, `comment`, `level`) VALUES ('busan{$i}', 'busan{$i}', '부산', '100', '산', '', 'busan@email{$i}.{$i}', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL)";
             
-                echo ("sql = {$sql}");
+                if (($i % 10000) == 0) {
+                    echo ("[$i] 번째 레코드 추가. <br>");
+                }
 
                 // PDO에 쿼리 문장을 등록한다
                 $stm = $pdo->prepare($sql);
