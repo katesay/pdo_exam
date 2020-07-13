@@ -40,7 +40,7 @@
 	dbClose($pdo);
  
 	// 새 글 쓰기인 경우 리스트로..
-	//echo ("<meta http-equiv='Refresh' content='1; URL=list.php'>");
+	echo ("<meta http-equiv='Refresh' content='1; URL=list.php'>");
 ?>
 <center>
 <font size=2>정상적으로 저장되었습니다.</font>
