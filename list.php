@@ -1,12 +1,14 @@
 <?php
-//데이터 베이스 연결하기
+	const DEBUG = TRUE;
+	
 	//데이터 베이스 연결하기
 	include "db_user.php";
 	include "db_info.php";
+	include "util.php";
 
 # LIST 설정
 # 1. 한 페이지에 보여질 게시물의 수
-$page_size=3;
+$page_size = 10;
 
 # 2. 페이지 나누기에 표시될 페이지의 수
 $page_list_size = 10;
@@ -41,16 +43,17 @@ try {
 	
 	//결과의 첫번째 열이 count(*) 의 결과다.
 	$total_row = $result_count;
-	var_dump($total_row);	
+	d($total_row);	
 	
 	# 총 페이지 계산
 	if ($total_row <= 0) $total_row = 0;
 	$total_page = ceil($total_row / $page_size);
-	var_dump($total_page);	
+	d($total_page);	
 
 	# 현재 페이지 계산
 	$current_page = ceil(($no+1)/$page_size);
-	var_dump($current_page);
+	d($current_page);
+
 	include ("html.head.tpl.php");
 
 	foreach($result as $row) 
